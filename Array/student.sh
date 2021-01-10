@@ -1,45 +1,19 @@
 #! /bin/bash -x
 
-#ARRAY definition
+counter=0
+studentName[((counter++))]='Ashwini'
+studentName[((counter++))]='Nikita'
+studentName[((counter++))]='Biswajit'
+studentName[((counter++))]='Bhushan'
 
 
-#INDIRECT Declaration of Array
-studentName[0]='Ashwini'
-studentName[1]='Nikita'
-studentName[2]='Biswajit'
-studentName[3]='Bhushan'
+echo "Print elements: ${studentName[@]}"
 
-# Explicit Declaration of array
+# To print count of an element
 
-declare -a studentStream
+echo "Print indexes: ${#studentName[@]}"
 
-
-# Compound Assignment
-
-studentStream=('CS' 'IT' 'EXTC' 'MECH') # studentStream=([0]='CS' [1]='IT')
-
-# To print all elements / values of array
-
-echo ${studentName[@]}
-
-echo ${studentName[*]}
-
-echo ${studentName[@]:0}
-
-# To print an index element
-
-echo ${studentStream[1]}
-
-echo ${studentStream[3]}
-
-# Delete a element at particular indexes
-
-unset studentStream[0]
-
-unset studentStream[2]
-# print all element
-echo ${studentStream[@]}
-#delete all element
-unset studentName
-#printing all element
-echo ${studentName[@]}
+for((i=0;i<${#studentName[@]};i++))
+do
+   echo ${studentName[$i]}
+done

@@ -1,15 +1,13 @@
-#!  /bin/bash
+#!  /bin/bash -x
 
-echo -e "please choose the \n1. Head \n2. Tail"
 
-read choice
 
-coinToss=$((RANDOM%2+1)) 
+coinToss=$((RANDOM%2))
 
-if [ $choice -eq $coinToss ]
+if [ $coinToss -eq 1 ]
 
 then
-        echo ”you won”
+        echo ”Head”
 else
-        echo “lost”
+        echo “Tail”
 fi

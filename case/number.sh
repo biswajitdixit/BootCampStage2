@@ -6,9 +6,9 @@ read num
 
 case $num in
 [0-9]) echo "unit";;
-[10-99]*) echo "ten";;
-[100-999]*) echo "hundred";;
-[1000-10000]*) echo "thousand";;
+[1-9][0-9]) echo "ten";;
+[1-9][0-9][0-9]) echo "hundred";;
+[1-9][0-9][0-9][0-9]) echo "thousand";;
 *) echo "Wrong input"
 
 esac
